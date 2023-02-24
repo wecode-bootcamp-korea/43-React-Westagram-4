@@ -1,0 +1,17 @@
+@mixin flexBetween {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@mixin profileFlex {
+  display: flex;
+  align-items: center;
+}
+
+@mixin userPofileImg {
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 50%;
+}
