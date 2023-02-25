@@ -1,0 +1,185 @@
+@import '../../../styles/common.scss';
+@import '../../../styles/reset.scss';
+@import '../../../styles/variables.scss';
+
+.main {
+  width: 100%;
+
+  .bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    .navigation {
+      display: flex;
+
+      align-items: center;
+      flex-direction: row;
+      height: 50px;
+      border-bottom: 1px solid #e6e6e6;
+      margin-bottom: 50px;
+      justify-content: space-around;
+      width: 100%;
+
+      .navLeft {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .instargramIcon {
+          width: 35px;
+          padding: 5px;
+          margin-right: 10px;
+          border-right: 1px solid black;
+        }
+
+        .navTitle {
+          text-align: center;
+          font-family: 'Lobster';
+        }
+      }
+
+      .searchBox::placeholder {
+        text-align: center;
+      }
+
+      .navIcon {
+        width: 25px;
+        margin: 5px;
+      }
+    }
+
+    .mainPage {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 60%;
+
+      .mainfeed {
+        width: 40%;
+
+        display: flex;
+        flex-flow: row nowrap;
+        border: 1px solid #e6e6e6;
+
+        .mainLeft {
+          display: flex;
+          width: 100%;
+
+          .feed {
+            width: 100%;
+
+            .writer {
+              width: 100%;
+              display: flex;
+              padding: 5px 0px;
+
+              align-items: center;
+              margin-left: 3%;
+
+              .mari {
+                border-radius: 50%;
+                width: 40px;
+                height: 40px;
+              }
+
+              .name {
+                margin-left: 10px;
+              }
+            }
+
+            .myPhoto {
+              width: 100%;
+            }
+
+            #awsomeIcon {
+              margin: 2px;
+            }
+
+            .whoIsLike {
+              font-size: 13px;
+            }
+
+            .commentList {
+              display: flex;
+              flex-direction: column;
+            }
+
+            .addComment {
+              border-top: 1px solid #e6e6e6;
+              margin-top: 10px;
+              display: flex;
+
+              #comment {
+                border: none;
+                width: 100%;
+              }
+              button {
+                font-size: 13px;
+                width: 38px;
+                background-color: #c4e0fc;
+                border: none;
+                color: white;
+                border-radius: 3px;
+              }
+            }
+          }
+        }
+
+        .mainRight {
+          width: 50%;
+          border-left: 1px solid #e6e6e6;
+
+          .writer {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 5%;
+
+            .idOwner {
+              border-radius: 50%;
+              width: 25px;
+              height: 25px;
+            }
+
+            .idOwnerName {
+              margin-left: 10px;
+            }
+          }
+
+          .story {
+            border: 1px solid #e6e6e6;
+            width: 80%;
+            margin-left: 9%;
+            margin-top: 10%;
+
+            .storyTitle {
+              margin: 5px;
+              color: #a2a2a2;
+            }
+
+            .storyList {
+              display: flex;
+              align-items: center;
+              margin-left: 5px;
+              max-height: 30px;
+              padding-bottom: 5%;
+
+              .storyImage {
+                border-radius: 50%;
+                width: 25px;
+                height: 25px;
+              }
+
+              .storyOwner {
+                margin-left: 10px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
