@@ -10,7 +10,7 @@ const MainTaehoon = () => {
         <nav className="navigation">
           <div className="navLeft">
             <img className="instargramIcon" src={instargramIcon} alt="none" />
-            <div className="navTitle">westagram</div>
+            <div className="navTitle">Westagram</div>
           </div>
           <input type="text" placeholder="검색" className="searchBox" />
           <div>

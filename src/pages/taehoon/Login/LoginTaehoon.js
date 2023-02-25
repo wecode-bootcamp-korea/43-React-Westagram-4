@@ -14,23 +14,21 @@ const LoginTaehoon = () => {
   };
 
   const onKeyUp = event => {
-    if (id.includes('@') && pw.length >= 5) {
-      buttonColor();
-      if (event.key === 'Enter') {
-        goToMain();
-      }
-    } else {
-      if (event.key === 'Enter') {
-        alert('아이디를 확인해주세요.');
-      }
+    id.includes('@') && pw.length >= 5
+      ? buttonColor()
+      : setChangeButtonColor('changeButtonColor');
+
+    if (event.key === 'Enter') {
+      id.includes('@') && pw.length >= 5
+        ? goToMain()
+        : alert('아이디를 확인해주세요.');
     }
   };
+
   const onClick = () => {
-    if (id.includes('@') && pw.length >= 5) {
-      goToMain();
-    } else {
-      alert('아이디를 확인해주세요.');
-    }
+    id.includes('@') && pw.length >= 5
+      ? goToMain()
+      : alert('아이디를 확인해주세요.');
   };
 
   const saveUserId = e => {
