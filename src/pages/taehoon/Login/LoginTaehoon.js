@@ -3,19 +3,15 @@ import './LoginTaehoon.scss';
 import { useNavigate } from 'react-router-dom';
 
 const LoginTaehoon = () => {
-  const navigte = useNavigate();
+  const navigate = useNavigate();
   const [id, setId] = useState('');
   const [pw, setPw] = useState('');
   const [changeButtonColor, setChangeButtonColor] =
     useState('changeButtonColor');
 
-  const buttonColor = () => {
-    setChangeButtonColor('blue');
-  };
-
   const onKeyUp = event => {
     id.includes('@') && pw.length >= 5
-      ? buttonColor()
+      ? setChangeButtonColor('blue')
       : setChangeButtonColor('changeButtonColor');
 
     if (event.key === 'Enter') {
@@ -38,7 +34,7 @@ const LoginTaehoon = () => {
     setPw(e.target.value);
   };
   const goToMain = () => {
-    navigte('/main-taehoon');
+    navigate('/main-taehoon');
   };
 
   return (
@@ -65,7 +61,16 @@ const LoginTaehoon = () => {
           />
         </div>
 
-        <button className={changeButtonColor} value="value" onClick={onClick}>
+        {/* <button className={changeButtonColor} value="value" onClick={onClick}>
+          로그인
+        </button> */}
+
+        <button
+          disabled={id.includes('@') && pw.length > 4 ? false : true}
+          className={changeButtonColor}
+          value="value"
+          onClick={onClick}
+        >
           로그인
         </button>
 

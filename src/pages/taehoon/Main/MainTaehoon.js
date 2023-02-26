@@ -1,9 +1,33 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './MainTaehoon.scss';
 import instargramIcon from '../../../assets/taehoon/instagram.png';
 import mari from '../../../assets/taehoon/IMG_1211.JPG';
 import feedImg from '../../../assets/taehoon/IMG_1278.jpeg';
+
 const MainTaehoon = () => {
+  /* input의 value를 설정하고 그 값을 배열로 바꾼다.
+배열.map을 써서 새로운 <div>로 만들고 commentList에 넣는다.*/
+  const [comment, setComment] = useState('');
+  const [commentArray, setCommentArray] = useState([]);
+
+  const newComment = e => {
+    setComment(e.target.value);
+  };
+
+  const addNewComment = commentArray.map(commentArray => (
+    <div key={commentArray.toString()}>{commentArray}</div>
+  ));
+  const onKeyUp = event => {
+    if (event.key === 'Enter') {
+      setCommentArray([...commentArray, comment]);
+      setComment('');
+    }
+  };
+  const onClick = () => {
+    setCommentArray([...commentArray, comment]);
+    setComment('');
+  };
+
   return (
     <div className="main">
       <div className="bar">
@@ -35,7 +59,7 @@ const MainTaehoon = () => {
           <div className="mainfeed">
             <section className="mainLeft">
               <div className="feed">
-                <artcle>
+                <article>
                   <div className="writer">
                     <img src={mari} alt="" className="mari" />
                     <h5 className="name">taehoon_hong</h5>
@@ -53,19 +77,30 @@ const MainTaehoon = () => {
                     <section>
                       <span className="whoIsLike">여러명이 좋아합니다.</span>
 
-                      <div className="commentList" />
+                      <div
+                        className="commentList"
+                        key={commentArray.toString()}
+                        value={comment}
+                      >
+                        {addNewComment}
+                      </div>
 
                       <div className="addComment">
                         <input
                           type="text"
                           id="comment"
                           placeholder="댓글 달기..."
+                          value={comment}
+                          onKeyUp={onKeyUp}
+                          onChange={newComment}
                         />
-                        <button id="uploadComment">게시</button>
+                        <button onClick={onClick} id="uploadComment">
+                          게시
+                        </button>
                       </div>
                     </section>
                   </div>
-                </artcle>
+                </article>
               </div>
             </section>
             <section className="mainRight">
