@@ -1,0 +1,456 @@
+@import '../../../styles/variables.scss';
+
+.westagram {
+  font-family: 'Lobster', cursive;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+button {
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+input {
+  &::placeholder {
+    color: #bababa;
+  }
+}
+
+::-webkit-scrollbar {
+  display: none; /* 스크롤바 보이지 않게 */
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+
+  li {
+    list-style: none;
+  }
+}
+// 여기까지가 common.scss
+button {
+  @include button-tag;
+}
+
+@media screen and (max-width: 900px) {
+  .recommendTotalWrap {
+    display: none;
+  }
+}
+
+.upperNav {
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-bottom: 1px solid $gray-border;
+  background-color: white;
+  height: 80px;
+
+  .westaWrap {
+    display: flex;
+    justify-content: center;
+    height: 28px;
+
+    #instagramLogo {
+      width: 28px;
+      margin-right: 13px;
+    }
+
+    .westagram {
+      border-left: 2px solid black;
+      padding-left: 13px;
+      font-size: 28px;
+    }
+  }
+
+  .search {
+    width: 220px;
+    height: 25px;
+    background-color: $background;
+    border: 1.5px solid $gray-border;
+    border-radius: 2px;
+  }
+
+  div {
+    .upperIconsButton {
+      width: 28px;
+      margin-left: 25px;
+
+      .upperIcons {
+        width: 28px;
+      }
+    }
+  }
+
+  #dropBox {
+    position: absolute;
+    right: 100px;
+    top: 70px;
+    width: 250px;
+    height: 200px;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 7px;
+    display: none;
+
+    a {
+      padding: 13px 15px 7px 15px;
+      display: flex;
+      align-items: center;
+
+      img {
+        width: 26px;
+        margin-right: 7px;
+      }
+    }
+
+    #log_out {
+      padding-top: 16px;
+      border-top: 1px solid black;
+    }
+
+    #setting {
+      padding-bottom: 15px;
+    }
+  }
+}
+.mainWrap {
+  display: flex;
+  justify-content: center;
+  padding: 35px;
+
+  .leftSection {
+    width: 650px;
+    min-width: 570px;
+    margin: 15px;
+
+    .leftSectionArticle {
+      width: 100%;
+      background-color: white;
+      border: 1.5px solid $gray-border;
+
+      .profileNav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 60px;
+
+        .profileNavInner1 {
+          display: flex;
+          align-items: center;
+          margin-left: 15px;
+
+          .profileImg {
+            width: 40px;
+          }
+
+          .profileName {
+            margin-left: 15px;
+            font-weight: bold;
+          }
+        }
+
+        .profileNavInner2 {
+          font-size: 28px;
+          margin-right: 15px;
+          margin-bottom: 12px;
+        }
+      }
+
+      .uploadImg {
+        width: 100%;
+      }
+
+      .profileIconWrap {
+        position: relative;
+        height: 30px;
+        margin: 7px 0 12px 0;
+        display: flex;
+        justify-content: flex-start;
+
+        .profileHeart {
+          width: 28px;
+          padding: 0;
+          margin-left: 14px;
+
+          .profileHeart {
+            width: 28px;
+            padding: 0;
+            margin: 0;
+          }
+        }
+
+        .profileComment {
+          width: 28px;
+          padding: 0;
+          margin-left: 14px;
+
+          .profileComment {
+            width: 28px;
+            padding: 0;
+            margin: 0;
+          }
+        }
+
+        .profileUproad {
+          width: 28px;
+          padding: 0;
+          margin-left: 14px;
+
+          .profileUproad {
+            width: 28px;
+            padding: 0;
+            margin: 0;
+          }
+        }
+
+        .profileSave {
+          width: 28px;
+          padding: 0;
+          margin-left: 14px;
+          position: absolute;
+          right: 17px;
+
+          .profileSave {
+            width: 28px;
+            padding: 0;
+            margin: 0;
+          }
+        }
+      }
+
+      .likeWrap {
+        margin-left: 14px;
+        margin-bottom: 13px;
+
+        .likeId,
+        .likeCount {
+          font-weight: 730;
+        }
+      }
+
+      .newComment {
+        margin-bottom: 5px;
+        max-height: 90px;
+        overflow: auto;
+
+        .commentTotalWrap {
+          position: relative;
+          margin-left: 14px;
+
+          .commentId {
+            font-weight: 730;
+          }
+
+          .commentLikeButton {
+            position: absolute;
+            right: 14px;
+
+            .commentLike {
+              margin-right: 25px;
+              width: 12px;
+            }
+          }
+
+          .deleteComment {
+            position: absolute;
+            right: 14px;
+            opacity: 0;
+
+            &:hover {
+              opacity: 100;
+            }
+          }
+        }
+      }
+
+      .commentTime {
+        margin-left: 14px;
+        margin-bottom: 8px;
+        color: $gray-text;
+      }
+
+      .addcommentWrap {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-top: 1.5px solid #f2f2f2;
+        height: 60px;
+
+        .addComment {
+          width: 500px;
+          height: 30px;
+          margin-left: 14px;
+          border-style: none;
+          font-size: 16px;
+
+          &::placeholder {
+            font-size: 16px;
+          }
+        }
+
+        .addCommentButton {
+          margin-right: 14px;
+          color: #aed4f9;
+
+          &:hover {
+            cursor: pointer;
+            color: dodgerblue;
+          }
+        }
+      }
+    }
+  }
+
+  .rightSection {
+    width: 320px;
+    min-width: 300px;
+    margin: 15px;
+
+    .userProfileWrap {
+      display: flex;
+      align-items: center;
+      margin-bottom: 15px;
+
+      .userProfileImg {
+        width: 55px;
+        margin-right: 12px;
+      }
+
+      .userIdWrap {
+        .userCompany {
+          color: $gray-text;
+        }
+      }
+    }
+
+    .storyTotalWrap {
+      width: 100%;
+      height: 250px;
+      margin-bottom: 10px;
+      padding: 15px;
+      background-color: white;
+      border: 1.5px solid $gray-border;
+      overflow: auto;
+
+      .storyWrap {
+        display: flex;
+        justify-content: space-between;
+
+        .rightSectionTitle {
+          color: $gray-text;
+        }
+
+        .seeAll {
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+
+      ul {
+        .storyProfileWrap {
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+          margin: 15px 5px;
+
+          .storyProfileImg {
+            width: 43px;
+            border-radius: 50%;
+            padding: 2px;
+            border: 2px solid rgb(255, 44, 129);
+          }
+
+          .storyIdWrap {
+            margin-left: 13px;
+
+            .storyTime {
+              color: $gray-text;
+            }
+          }
+        }
+      }
+    }
+
+    .recommendTotalWrap {
+      width: 100%;
+      height: 200px;
+      margin-bottom: 10px;
+      padding: 15px;
+      background-color: white;
+      border: 1.5px solid $gray-border;
+      overflow: auto;
+
+      .recommendWrap {
+        display: flex;
+        justify-content: space-between;
+
+        .rightSectionTitle {
+          color: $gray-text;
+        }
+
+        .seeAll {
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+
+      ul {
+        .recommendProfileWrap {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin: 15px 5px;
+
+          .recommendImgWrap {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+
+            .recommendProfileImg {
+              width: 40px;
+              border-radius: 50%;
+            }
+
+            .recommendIdWrap {
+              margin-left: 13px;
+
+              .recommendFollower {
+                color: $gray-text;
+              }
+            }
+          }
+
+          .follow {
+            color: #3897f1;
+          }
+        }
+      }
+    }
+
+    .etcWrap {
+      width: 80%;
+      color: $gray-text;
+
+      .etc {
+        color: $gray-text;
+      }
+    }
+    .etc {
+      color: $gray-text;
+    }
+  }
+}

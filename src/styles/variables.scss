@@ -1,1 +1,13 @@
-$text-color: #333;
+@mixin button-tag {
+  padding: 0;
+  border: none;
+  background-color: white;
+  font-size: 16px;
+}
+
+$gray-text: #999999;
+
+$gray-border: #efefef;
+
+$background: #fafafa;
+// [권유정 variables] 삭제하지 마세요..
