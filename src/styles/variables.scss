@@ -10,4 +10,9 @@ $gray-text: #999999;
 $gray-border: #efefef;
 
 $background: #fafafa;
-// [권유정 variables] 삭제하지 마세요..
+
+@mixin displayFlex($justify, $align) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+}

@@ -12,8 +12,7 @@ const MainYoojeong = () => {
   // enter키 누르면 댓글이 comment 배열에 추가
   const addCommentByEnter = e => {
     if (e.code === 'Enter' && inputValue.length > 0) {
-      comments.push(inputValue);
-      setComments(comments);
+      setComments(commentList => [...commentList, inputValue]);
 
       setInputValue('');
     }
@@ -22,8 +21,7 @@ const MainYoojeong = () => {
   // 게시 버튼 누르면 댓글이 comment 배열에 추가
   const addCommentByClick = e => {
     if (inputValue.length > 0) {
-      comments.push(inputValue);
-      setComments(comments);
+      setComments(commentList => [...commentList, inputValue]);
 
       setInputValue('');
     }
@@ -141,7 +139,6 @@ const MainYoojeong = () => {
             </div>
             <ul className="newComment">
               {comments.map((comment, index) => {
-                // return 없으면 댓글이 쌓이지 않는 이유?
                 return <CommentTotalWrap key={index} comment={comment} />;
               })}
             </ul>
