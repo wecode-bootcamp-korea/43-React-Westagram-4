@@ -1,0 +1,532 @@
+nav {
+  padding: 23px 20px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.0975);
+
+  .navContents {
+    width: 1010px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: spaceBetween;
+    align-items: center;
+
+    .navLogo {
+      display: flex;
+      align-items: center;
+
+      .logoImg {
+        width: 24px;
+        height: 24px;
+      }
+
+      .logoText {
+        height: 29px;
+        margin-top: 5px;
+      }
+      .verticalLine {
+        background-color: #262626;
+        height: 28px;
+        margin: 0 16px;
+        width: 1px;
+      }
+    }
+
+    .navSearch {
+      width: 215px;
+      border: solid 1px #dbdbdb;
+      border-radius: 3px;
+      color: #262626;
+      font-weight: lighter;
+      outline: 0;
+      padding: 8px 10px 8px 26px;
+    }
+
+    .navLink {
+      float: right;
+      display: flex;
+      align-items: center;
+
+      .navLink img {
+        height: 24px;
+      }
+
+      .navLink img:not(:firstchild) {
+        margin-left: 30px;
+      }
+    }
+  }
+}
+
+main {
+  width: 935px;
+  /* background-color: lawngreen; */
+  height: 100%;
+  padding-top: 20px;
+
+  .feeds {
+    /* background-color: lightblue; */
+    width: 100%;
+    height: 700px;
+    margin-right: 28px;
+    width: 614px;
+
+    article {
+      width: 100%;
+      border: 1px solid #dbdbdb;
+      border-radius: 3px;
+      background-color: #fff;
+
+      .feedUserIdBox {
+        /* overflow: hidden; */
+        height: 60px;
+        display: flex;
+        /* justify-content: spaceBetween; */
+        justify-content: flexStart;
+        padding: 16px;
+        border-bottom: 1px solid #efefef;
+
+        .feedUserPicWrap {
+          width: 34px;
+          height: 18px;
+          position: relative;
+        }
+
+        .feedUserPicWrap img {
+          width: 100%;
+          border-radius: 120%;
+          position: relative;
+          top: 0px;
+        }
+
+        .feedUserId {
+          margin-left: 15px;
+          position: relative;
+          top: 5px;
+          font-size: 14px;
+          font-weight: 600;
+        }
+        .feedThreeDotWrap {
+          display: flex;
+          justify-content: flexEnd;
+          align-items: center;
+          width: 100%;
+          position: relative;
+          top: 2px;
+        }
+        .threeDotMent img {
+          width: 25px;
+          height: 25zpx;
+          /* background-color: yellow; */
+        }
+      }
+
+      .feedImgWrap {
+        display: block;
+        overflow: hidden;
+        width: 100%;
+        /* height: 612px;  */
+        /* 여기서 높이 지정안하고 이미지 높이 상속받으려면?*/
+        background-color: yellow;
+        border-bottom: 1px solid #efefef;
+      }
+      .feedImgWrap img {
+        width: 100%;
+        max-height: inherit;
+        display: block;
+        /* display: inline; */
+      }
+
+      .feedIconsWrap {
+        height: 56px;
+        padding: 16px 0 16px 16px;
+        display: flex;
+        justify-content: spaceBetween;
+
+        .feedIconsLeft {
+          display: flex;
+          justify-content: flexStart;
+        }
+
+        .iconBookmark > img {
+          margin-right: 0px;
+        }
+      }
+
+      .feedReplWrap {
+        border-bottom: 1px solid #efefef;
+        padding: 0px 16px 5px 16px;
+        font-size: 14px;
+        letter-spacing: -0.3px;
+
+        .feedLikeTextWrap {
+          margin-bottom: 8px;
+        }
+        .feedLikeTextWrap button {
+          border: none;
+          font-size: 14px;
+          font-weight: 600;
+        }
+
+        .feedRepls > span {
+          display: inline-block;
+          width: 100%;
+          padding-bottom: 5px;
+        }
+
+        .othersRepl {
+          display: flex;
+          position: relative;
+        }
+
+        .othersRepl-icons-wrap {
+          display: flex;
+          flex-direction: column;
+          justify-content: flexEnd;
+        }
+
+        .mention {
+          margin-right: 5px;
+          color: #003569;
+
+          .mention a {
+            color: #003569;
+          }
+        }
+
+        .feedTime {
+          font-size: 10px;
+          color: #c7c7c7;
+        }
+
+        .heartBtn {
+          display: inline-block;
+          position: relative;
+          top: 4px;
+          float: right;
+          height: 14px;
+          width: 14px;
+          opacity: 0.5;
+          border: none;
+        }
+
+        .heartBtn img {
+          width: 100%;
+        }
+      }
+      .feedReplWrap span {
+        padding: 2px 0;
+      }
+      .feedReplWrap span a {
+        font-weight: normal;
+        font-size: 13px;
+      }
+
+      .feedReplWrap a.userId {
+        margin-right: 5px;
+        font-weight: bold;
+      }
+
+      .feedReplWrap button.allRepl {
+        border: none;
+        display: inline-block;
+        font-weight: 600;
+        font-size: 12px;
+        padding-left: 3px;
+        color: #c7c7c7;
+      }
+
+      .sendReplWrap {
+        height: 56px;
+        padding: 16px;
+        display: flex;
+        justify-content: spaceBetween;
+
+        .submitWrap {
+          position: absolute;
+          right: -44px;
+          bottom: 4px;
+        }
+
+        .submitWrap button {
+          color: #003569;
+          border: none;
+          font-weight: 600;
+          font-size: 14px;
+          /* opacity: .5; */
+          cursor: pointer;
+        }
+      }
+      .sendReplWrap .formDiv {
+        width: 92%;
+        position: relative;
+      }
+      .sendReplWrap input {
+        border: none;
+        width: 100%;
+        font-size: 14px;
+        position: relative;
+        top: 3px;
+      }
+
+      .sendReplWrap input::placeholder {
+        color: #c7c7c7;
+        font-size: 14px;
+        position: relative;
+        top: px;
+      }
+    }
+  }
+
+  .mainRight {
+    .myProfileWrap {
+      display: flex;
+      flex-direction: row;
+      z-index: -1;
+
+      .myPicWrap {
+        width: 50px;
+        height: 50px;
+      }
+
+      .myPicWrap img {
+        border-radius: 90px;
+        width: 100%;
+        height: 49px;
+      }
+
+      .myPicText {
+        margin-left: 14px;
+        font-weight: bold;
+        display: flex;
+        flex-direction: column;
+        font-size: medium;
+        position: relative;
+      }
+
+      .myPicText div:firstchild {
+        font-weight: 500;
+        position: relative;
+        top: 8px;
+      }
+      .myPicText div:lastchild {
+        font-weight: normal;
+        font-size: small;
+      }
+    }
+
+    .sideBox {
+      margin-top: 12px;
+      height: 223px;
+      border: 1px solid #dbdbdb;
+      border-radius: 3px;
+      background-color: #fff;
+
+      .sideBox:lastchild {
+        height: 194px;
+      }
+
+      .sideTitle {
+        padding: 4px 16px;
+      }
+      .sideTitle {
+        display: flex;
+        justify-content: spaceBetween;
+        align-items: baseline;
+        padding-top: 16px;
+        position: relative;
+      }
+
+      .sideTitle div:firstchild {
+        color: #999;
+        font-weight: bold;
+      }
+
+      .sideTitle div:lastchild {
+        color: #262626;
+        font-size: small;
+        font-weight: 400;
+        position: relative;
+        top: -2px;
+      }
+
+      .sideListWrap {
+        height: 173px;
+
+        .sideList {
+          overflow: scroll;
+          /* background-color: rgba(55, 55, 55, .5); */
+          height: 100%;
+          padding-left: 16px;
+          margin-top: 8px;
+
+          .userPicWrap {
+            width: 34px;
+            height: 34px;
+          }
+
+          .userProfileWrap img {
+            border-radius: 25px;
+            width: 130%;
+          }
+
+          .userProfileText {
+            margin-left: 14px;
+            display: flex;
+            flex-direction: column;
+            font-size: medium;
+            position: relative;
+            /* top : -4px; */
+            width: 100%;
+          }
+
+          .userProfileText div:firstchild {
+            font-weight: 500;
+            font-size: 15px;
+            position: relative;
+            top: -1px;
+          }
+          .userProfileText div:lastchild {
+            font-weight: normal;
+            font-size: 12px;
+            color: #999;
+          }
+
+          .userProfileWrap {
+            display: flex;
+            align-items: center;
+            flex-direction: row;
+            justify-content: flexStart;
+            z-index: -1;
+          }
+        }
+      }
+    }
+
+    .sideFoot {
+      margin-top: 12px;
+      color: #c7c7c7;
+      font-size: 12px;
+    }
+
+    .sideFoot ul {
+      margin-right: 6px;
+      margin-bottom: 12px;
+    }
+    .sideFoot li {
+      display: inline;
+      line-height: 1.5em;
+    }
+
+    .sideFoot li:after {
+      content: ' ・ ';
+    }
+    .sideFoot li:lastchild:after {
+      content: '';
+    }
+
+    .sideFoot a {
+      color: #c7c7c7;
+    }
+
+    .followBtn {
+      padding-right: 16px;
+      float: right;
+    }
+
+    .followBtn button {
+      color: #3897f0;
+      /* width: 100%; */
+      border: none;
+      font-size: 12px;
+      font-weight: normal;
+    }
+  }
+}
+/* 피드 아이콘 */
+
+.feedIconsWrap img {
+  width: 24px;
+  margin-right: 16px;
+}
+
+/* 피드 댓글 목록*/
+
+button.replHoverThreeDot {
+  float: right;
+  position: absolute;
+  right: 37px;
+  /* top : 9px; */
+  border: none;
+  width: 10px;
+}
+// button.replHoverThreeDotimg {
+//   display: block;
+//   width: 20px;
+// }
+
+/* 피드 댓글 쓰기 */
+
+/* //reset.css */
+
+* {
+  box-sizing: borderBox;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Noto Sans',
+    san-serif;
+  /* color: #262626; */
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: #262626;
+}
+
+.formDiv,
+input,
+button {
+  box-shadow: none;
+  outline: none;
+  /* 인풋장 선택시 파란줄 없애기 */
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  background-color: #fafafa;
+}
+
+main {
+  max-width: 935px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+}
+
+.hide {
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
+.opacity10 {
+  opacity: 1;
+}
+.opacity05 {
+  opacity: 0.5;
+}
+
+.visible {
+  visibility: visible;
+}
+
+.hidden {
+  visibility: hidden;
+}
