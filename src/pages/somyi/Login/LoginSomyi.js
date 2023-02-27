@@ -41,7 +41,7 @@ const LoginSomyi = () => {
         <button
           type="button"
           className={isValidation ? 'disabled' : 'albled'}
-          disabled={isValidation ? false : true}
+          disabled={!isValidation}
           onClick={goToMain}
         >
           로그인

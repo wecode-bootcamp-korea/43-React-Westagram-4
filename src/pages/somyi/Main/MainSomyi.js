@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import Comments from './components/Comments';
 import './MainSomyi.scss';
 
 const MainSomyi = () => {
+  const navigate = useNavigate();
+
   const [comment, setComment] = useState('');
   const commentValue = e => {
     setComment(e.target.value);
@@ -25,9 +28,13 @@ const MainSomyi = () => {
     <div className="main">
       <nav className="navContainer">
         <div className="logoWrap">
-          <Link to="/">
-            <img src="/images/somyi/instagram.png" alt="logo" />
-          </Link>
+          <img
+            src="/images/somyi/instagram.png"
+            alt="logo"
+            onClick={() => {
+              navigate('/login-somyi');
+            }}
+          />
           <h1>Westagram</h1>
         </div>
         <div className="searchWrap">
@@ -76,11 +83,7 @@ const MainSomyi = () => {
                 </div>
                 <ul>
                   {commentArray.map((value, index) => (
-                    <li key={index}>
-                      somyi_s2 {value}
-                      <i className="fa-regular fa-heart" />
-                      <i className="fa-solid fa-xmark" />
-                    </li>
+                    <Comments value={value} key={index} />
                   ))}
                 </ul>
               </div>
