@@ -1,8 +1,23 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './MainSomyi.scss';
 
 const MainSomyi = () => {
+  const [comment, setComment] = useState('');
+  const commentValue = e => {
+    setComment(e.target.value);
+  };
+
+  const [commentArray, setCommentArray] = useState([]);
+
+  const addComment = e => {
+    if (comment === '') {
+      return;
+    }
+    setCommentArray(commentValueList => [...commentValueList, comment]);
+    setComment('');
+  };
+
   return (
     <div className="main">
       <nav className="navContainer">
@@ -55,12 +70,27 @@ const MainSomyi = () => {
                 <div>
                   <span>wecode_bootcamp</span> &nbsp;어쩌구
                   저쩌구저쩌주저ㅓ어어ㅓㄴ
-                  <ul className="blind" />
                 </div>
+                <ul>
+                  {commentArray.map((value, index) => (
+                    <li key={index}>
+                      somyi_s2 {value}
+                      <i className="fa-regular fa-heart" />
+                      <i className="fa-solid fa-xmark" />
+                    </li>
+                  ))}
+                </ul>
               </div>
-              <form className="commentWrap">
-                <input type="text" placeholder="댓글달기" />
-                <button>게시</button>
+              <form className="commentWrap" onSubmit={addComment}>
+                <input
+                  type="text"
+                  placeholder="댓글달기"
+                  value={comment}
+                  onChange={commentValue}
+                />
+                <button type="button" onClick={addComment}>
+                  게시
+                </button>
               </form>
             </article>
           </section>

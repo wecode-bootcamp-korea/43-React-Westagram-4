@@ -1,10 +1,19 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import '../../somyi/Login/LoginSomyi.scss';
 import './LoginSomyi.scss';
 
 const LoginSomyi = () => {
   const [saveIdValue, setSaveIdValue] = useState('');
   const [savePasswordValue, setSavePasswordValuee] = useState('');
+  const isValidation =
+    saveIdValue.indexOf('@') > -1 && savePasswordValue.length >= 5;
+
+  const navigate = useNavigate();
+
+  const goToMain = () => {
+    navigate('/main-somyi');
+  };
 
   const saveUserId = e => {
     setSaveIdValue(e.target.value);
@@ -30,13 +39,16 @@ const LoginSomyi = () => {
           value={savePasswordValue}
           onChange={saveUserPassword}
         />
-        <button type="button" disabled>
-          <Link to="/main">로그인</Link>
+        <button
+          type="button"
+          className={isValidation ? 'albled' : 'disabled'}
+          disabled={isValidation ? false : true}
+          onClick={goToMain}
+        >
+          로그인
         </button>
       </form>
-      <div className="pwSearch">
-        <Link to="/">비밀번호를 잊으셨나요?</Link>
-      </div>
+      <div className="pwSearch">비밀번호를 잊으셨나요?</div>
     </div>
   );
 };
