@@ -1,7 +1,7 @@
 @import '../../../styles/mixin.scss';
 @import '../../../styles/variables.scss';
 
-.LoginSomyi {
+.loginSomyi {
   position: fixed;
   top: 50%;
   left: 50%;
@@ -42,6 +42,7 @@
 
       &.albled {
         background-color: #67b6fa;
+        cursor: pointer;
       }
 
       &.disabled {

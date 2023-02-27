@@ -1,7 +1,7 @@
-@mixin flexBetween {
+@mixin displayFlex($justify, $align) {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  justify-content: $justify;
+  align-items: $align;
 }
 
 @mixin profileFlex {

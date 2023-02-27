@@ -11,9 +11,12 @@ const MainSomyi = () => {
   const [commentArray, setCommentArray] = useState([]);
 
   const addComment = e => {
+    e.preventDefault();
+
     if (comment === '') {
       return;
     }
+
     setCommentArray(commentValueList => [...commentValueList, comment]);
     setComment('');
   };

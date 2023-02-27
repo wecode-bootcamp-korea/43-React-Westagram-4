@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import '../../somyi/Login/LoginSomyi.scss';
 import './LoginSomyi.scss';
 
 const LoginSomyi = () => {
@@ -41,7 +40,7 @@ const LoginSomyi = () => {
         />
         <button
           type="button"
-          className={isValidation ? 'albled' : 'disabled'}
+          className={isValidation ? 'disabled' : 'albled'}
           disabled={isValidation ? false : true}
           onClick={goToMain}
         >

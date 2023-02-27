@@ -2,7 +2,7 @@
 @import '../../../styles/variables.scss';
 
 .navContainer {
-  @include flexBetween;
+  @include displayFlex(space-between, center);
   padding: 2rem 4rem;
   background-color: #fff;
   border-bottom: 1px solid $border-color;
@@ -246,7 +246,7 @@ main {
         overflow-y: scroll;
 
         .storyHeader {
-          @include flexBetween;
+          @include displayFlex(space-between, center);
         }
 
         article {
@@ -285,7 +285,7 @@ main {
         background-color: #fff;
 
         .recommondHeader {
-          @include flexBetween;
+          @include displayFlex(space-between, center);
         }
 
         article {
