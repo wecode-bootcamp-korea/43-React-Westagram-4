@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import './MainTaehoon.scss';
+import Comment from '../Comment/CommentTaehoon';
 import instargramIcon from '../../../assets/taehoon/instagram.png';
 import mari from '../../../assets/taehoon/IMG_1211.JPG';
 import feedImg from '../../../assets/taehoon/IMG_1278.jpeg';
+import './MainTaehoon.scss';
 
 const MainTaehoon = () => {
   /* input의 value를 설정하고 그 값을 배열로 바꾼다.
@@ -10,26 +11,8 @@ const MainTaehoon = () => {
   const [comment, setComment] = useState('');
   const [commentArray, setCommentArray] = useState([]);
 
-  const newComment = e => {
-    setComment(e.target.value);
-  };
-
-  const addNewComment = commentArray.map(commentArray => (
-    <div key={commentArray.toString()}>{commentArray}</div>
-  ));
-  const onKeyUp = event => {
-    if (event.key === 'Enter') {
-      setCommentArray([...commentArray, comment]);
-      setComment('');
-    }
-  };
-  const onClick = () => {
-    setCommentArray([...commentArray, comment]);
-    setComment('');
-  };
-
   return (
-    <div className="main">
+    <div className="mainTaehoon">
       <div className="bar">
         <nav className="navigation">
           <div className="navLeft">
@@ -77,27 +60,12 @@ const MainTaehoon = () => {
                     <section>
                       <span className="whoIsLike">여러명이 좋아합니다.</span>
 
-                      <div
-                        className="commentList"
-                        key={commentArray.toString()}
-                        value={comment}
-                      >
-                        {addNewComment}
-                      </div>
-
-                      <div className="addComment">
-                        <input
-                          type="text"
-                          id="comment"
-                          placeholder="댓글 달기..."
-                          value={comment}
-                          onKeyUp={onKeyUp}
-                          onChange={newComment}
-                        />
-                        <button onClick={onClick} id="uploadComment">
-                          게시
-                        </button>
-                      </div>
+                      <Comment
+                        comment={comment}
+                        setComment={setComment}
+                        commentArray={commentArray}
+                        setCommentArray={setCommentArray}
+                      />
                     </section>
                   </div>
                 </article>

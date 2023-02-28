@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import './LoginTaehoon.scss';
 import { useNavigate } from 'react-router-dom';
+import './LoginTaehoon.scss';
 
 const LoginTaehoon = () => {
   const navigate = useNavigate();
@@ -36,15 +36,16 @@ const LoginTaehoon = () => {
   const goToMain = () => {
     navigate('/main-taehoon');
   };
+  const buttonDisabled = id.includes('@') && pw.length > 4 ? false : true;
 
   return (
-    <div onKeyUp={onKeyUp} className="login">
+    <div onKeyUp={onKeyUp} className="loginTaehoon">
       <div className="loginPage">
         <div className="westagramBox">westagram</div>
         <div className="idBox">
           <input
             type="text"
-            id="id"
+            className="id"
             value={id}
             placeholder="전화번호, 사용자 이름 또는 이메일"
             onChange={saveUserId}
@@ -54,7 +55,7 @@ const LoginTaehoon = () => {
         <div className="passwordBox">
           <input
             type="password"
-            id="password"
+            className="password"
             value={pw}
             placeholder="비밀번호"
             onChange={saveUserPw}
@@ -66,7 +67,7 @@ const LoginTaehoon = () => {
         </button> */}
 
         <button
-          disabled={id.includes('@') && pw.length > 4 ? false : true}
+          disabled={buttonDisabled}
           className={changeButtonColor}
           value="value"
           onClick={onClick}
