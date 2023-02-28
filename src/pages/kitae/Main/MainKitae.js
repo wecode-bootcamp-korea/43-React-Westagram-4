@@ -1,25 +1,45 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './MainKitae.scss';
+// import Comment from './Comment';
+
 const MainKitae = () => {
+  //댓글 입력값 저장
+  const [comment, setComment] = useState('');
+  const handleComment = event => setComment(event.target.value);
+
+  // 댓글 입력값 저장 되는 곳 지정
+  const [commentArray, setCommentArray] = useState([]);
+
+  const handleCommentList = event => {
+    event.preventDefault();
+    if (comment === '') {
+      return;
+    }
+    setCommentArray(prev => [...prev, comment]);
+    setComment('');
+  };
+
+  console.log(commentArray);
+
   return (
     <>
       <nav>
-        <div class="navContents">
-          <div class="navLogo">
+        <div className="navContents">
+          <div className="navLogo">
             <img
-              class="logoImg"
+              className="logoImg"
               src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/logo.png"
             />
-            <div class="verticalLine"></div>
+            <div className="verticalLine"></div>
             <img
-              class="logoText"
+              className="logoText"
               src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/logo_text.png"
             />
           </div>
 
-          <input class="navSearch" placeholder="검색" />
+          <input className="navSearch" placeholder="검색" />
 
-          <div class="navLink">
+          <div className="navLink">
             <img src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/explore.png" />
             <img src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/heart.png" />
             <img src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/profile.png" />
@@ -28,15 +48,15 @@ const MainKitae = () => {
       </nav>
 
       <main>
-        <div class="feeds">
+        <div className="feeds">
           <article>
-            <div class="feedUserIdBox">
-              <div class="feedUserPicWrap">
-                <img src="images/miniprofile.jpeg" alt="" />
+            <div className="feedUserIdBox">
+              <div className="feedUserPicWrap">
+                <img src="images/kitae/miniprofile.jpeg" alt="" />
               </div>
-              <div class="feedUserId">kitaegram</div>
-              <div class="feedThreeDotWrap">
-                <div class="threeDotMent">
+              <div className="feedUserId">kitaegram</div>
+              <div className="feedThreeDotWrap">
+                <div className="threeDotMent">
                   <a href="#">
                     <img
                       src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/more.png"
@@ -47,30 +67,30 @@ const MainKitae = () => {
               </div>
             </div>
             {/* <!-- 피드 사진 --> */}
-            <div class="feedImgWrap">
-              <img src="images/feedPic.jpeg" alt="" />
+            <div className="feedImgWrap">
+              <img src="images/kitae/feedPic.jpeg" alt="" />
             </div>
             {/* <!-- 피드 아이콘 --> */}
-            <div class="feedIconsWrap">
-              <div class="feedIconsLeft">
-                <div class="iconHeart">
+            <div className="feedIconsWrap">
+              <div className="feedIconsLeft">
+                <div className="iconHeart">
                   <a href="#">
                     <img src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/heart.png" />
                   </a>
                 </div>
-                <div class="iconBalloon">
+                <div className="iconBalloon">
                   <a href="#">
                     <img src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/comment.png" />
                   </a>
                 </div>
-                <div class="iconShare">
+                <div className="iconShare">
                   <a href="#none">
                     <img src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/share.png" />
                   </a>
                 </div>
               </div>
-              <div class="feedIconright">
-                <div class="iconBookmark">
+              <div className="feedIconright">
+                <div className="iconBookmark">
                   <a href="#">
                     {' '}
                     <img
@@ -82,45 +102,45 @@ const MainKitae = () => {
               </div>
             </div>
             {/* <!-- 피드 댓글 --> */}
-            <div class="feedReplWrap">
-              <div class="feedLikeTextWrap">
+            <div className="feedReplWrap">
+              <div className="feedLikeTextWrap">
                 <button>
                   좋아요 <span>60</span>개
                 </button>
               </div>
-              <div class="feedRepls">
+              <div className="feedRepls">
                 <span>
-                  <a href="#" class="userId">
+                  <a href="#" className="userId">
                     kitaegram
                   </a>
                   in 몽골
                   <span>...</span>
-                  <button class="allRepl">더보기</button>
+                  <button className="allRepl">더보기</button>
                 </span>
-                <span class="mention">
+                <span className="mention">
                   <a href="#">댓글 5개 모두보기</a>
                 </span>
 
                 {/* <!-- 댓글시작 --> */}
-                <span class="othersRepl">
-                  <a href="#" class="userId">
+                <span className="othersRepl">
+                  <a href="#" className="userId">
                     USER_ID
                   </a>
                   <a
                     href="#
             "
-                    class="mention"
+                    className="mention"
                   >
                     @user.id
                   </a>
                   댓글이다.
-                  <button type="button" class="replHoverThreeDotHidden">
+                  <button type="button" className="replHoverThreeDotHidden">
                     <img
                       src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/more.png"
                       alt=""
                     />
                   </button>
-                  <button type="button" class="heartBtn">
+                  <button type="button" className="heartBtn">
                     <img
                       src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/heart.png"
                       alt=""
@@ -128,25 +148,25 @@ const MainKitae = () => {
                   </button>
                 </span>
                 {/* <!-- 추가댓글  --> */}
-                <span class="othersRepl">
-                  <a href="#" class="userId">
+                <span className="othersRepl">
+                  <a href="#" className="userId">
                     USER_ID
                   </a>
                   <a
                     href="#
           "
-                    class="mention"
+                    className="mention"
                   >
                     @user.id
                   </a>
                   댓글이다.
-                  <button type="button" class="replHoverThreeDotHidden">
+                  <button type="button" className="replHoverThreeDotHidden">
                     <img
                       src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/more.png"
                       alt=""
                     ></img>
                   </button>
-                  <button type="button" class="heartBtn">
+                  <button type="button" className="heartBtn">
                     <img
                       src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/heart.png"
                       alt=""
@@ -154,21 +174,52 @@ const MainKitae = () => {
                   </button>
                 </span>
                 {/* <!-- 추가댓글 끝 --> */}
+                {commentArray.map(list => {
+                  return (
+                    <span key={list} className="othersRepl">
+                      <a href="#" className="userId">
+                        USER_ID
+                      </a>
+                      <a href="#" className="mention">
+                        @user.id
+                      </a>
+                      {list}
+                      <button type="button" className="replHoverThreeDotHidden">
+                        <img
+                          src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/more.png"
+                          alt=""
+                        ></img>
+                      </button>
+                      <button type="button" className="heartBtn">
+                        <img
+                          src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/heart.png"
+                          alt=""
+                        />
+                      </button>
+                    </span>
+                  );
+                })}
               </div>
-              <span class="feedTime">2시간 전</span>
+              <span className="feedTime">2시간 전</span>
             </div>
             {/* <!-- 댓글쓰기 --> */}
-            <div class="sendReplWrap">
-              <div class="formDiv">
-                <div class="inputWrap">
+            <div className="sendReplWrap">
+              <div className="formDiv">
+                <div className="inputWrap">
                   <input
-                    class="replInput"
+                    className="replInput"
                     type="text"
                     placeholder="댓글 달기..."
+                    value={comment}
+                    onChange={handleComment}
                   />
                 </div>
-                <div class="submitWrap">
-                  <button class="replBtnOpacity05" type="button">
+                <div className="submitWrap">
+                  <button
+                    className="replBtnOpacity05"
+                    type="button"
+                    onClick={handleCommentList}
+                  >
                     게시
                   </button>
                 </div>
@@ -177,30 +228,30 @@ const MainKitae = () => {
           </article>
         </div>
 
-        <div class="mainRight">
-          <div class="myProfileWrap">
-            <div class="myPicWrap">
-              <img src="images/miniprofile.jpeg" alt="" />
+        <div className="mainRight">
+          <div className="myProfileWrap">
+            <div className="myPicWrap">
+              <img src="images/kitae/miniprofile.jpeg" alt="" />
             </div>
-            <div class="myPicText">
+            <div className="myPicText">
               <div>kitaegram</div>
             </div>
           </div>
-          <div class="sideBox">
-            <div class="sideTitle">
+          <div className="sideBox">
+            <div className="sideTitle">
               <div>스토리</div>
               <div>모두 보기</div>
             </div>
-            <div class="sideListWrap">
-              <div class="sideList">
+            <div className="sideListWrap">
+              <div className="sideList">
                 <ul>
                   <li>
                     <a href="#">
-                      <div class="userProfileWrap">
-                        <div class="userPicWrap">
-                          <img src="images/miniprofile.jpeg" alt="" />
+                      <div className="userProfileWrap">
+                        <div className="userPicWrap">
+                          <img src="images/kitae/miniprofile.jpeg" alt="" />
                         </div>
-                        <div class="userProfileText">
+                        <div className="userProfileText">
                           <div>kitaegram</div>
                           <div>4시간 전</div>
                         </div>
@@ -211,26 +262,26 @@ const MainKitae = () => {
               </div>
             </div>
           </div>
-          <div class="sideBox">
-            <div class="sideTitle">
+          <div className="sideBox">
+            <div className="sideTitle">
               <div>회원님을 위한 추천</div>
               <div>모두 보기</div>
             </div>
-            <div class="sideListWrap">
-              <div class="sideList">
+            <div className="sideListWrap">
+              <div className="sideList">
                 <ul>
                   <li>
                     <a href="#">
-                      <div class="userProfileWrap">
-                        <div class="userPicWrap">
-                          <img src="images/ger.jpeg" alt="" />
+                      <div className="userProfileWrap">
+                        <div className="userPicWrap">
+                          <img src="images/kitae/ger.jpeg" alt="" />
                         </div>
-                        <div class="userProfileText">
+                        <div className="userProfileText">
                           <div>random_id</div>
                           <div>instagram 신규 가입</div>
                         </div>
                         <form action="">
-                          <div class="followBtn">
+                          <div className="followBtn">
                             <button type="submit">팔로우</button>
                           </div>
                         </form>
@@ -241,7 +292,7 @@ const MainKitae = () => {
               </div>
             </div>
           </div>
-          <div class="sideFoot">
+          <div className="sideFoot">
             <nav>
               <ul>
                 <li>

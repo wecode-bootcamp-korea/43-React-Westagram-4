@@ -9,7 +9,7 @@ const LoginKitae = () => {
   const [isActive, setIsActive] = useState(true);
 
   const goToMain = () => {
-    navigate('/main');
+    navigate('/main-kitae');
   };
 
   const isPassedLogin = isActive => {

@@ -31,7 +31,8 @@ nav {
     }
 
     .navSearch {
-      width: 215px;
+      width: 100%;
+      height: 28px;
       border: solid 1px #dbdbdb;
       border-radius: 3px;
       color: #262626;
@@ -44,7 +45,9 @@ nav {
       float: right;
       display: flex;
       align-items: center;
-
+      margin-right: 30px;
+      margin-left: 30px;
+      height: 24px;
       .navLink img {
         height: 24px;
       }
@@ -450,11 +453,11 @@ main {
 
 /* 피드 댓글 목록*/
 
-button.replHoverThreeDot {
+button.replHoverThreeDotHidden {
   float: right;
   position: absolute;
   right: 37px;
-  /* top : 9px; */
+  // /* top : 9px; */
   border: none;
   width: 10px;
 }
