@@ -27,6 +27,10 @@ const LoginYoojeong = () => {
       : setisActive(false);
   };
 
+  const buttonDisabled = () => {
+    return id.includes('@') && password.length > 4 ? false : true;
+  };
+
   return (
     <main className="loginYoojeong">
       <h1 className="westagram">Westagram</h1>
@@ -47,7 +51,7 @@ const LoginYoojeong = () => {
       <button
         className={isActive ? 'activeBtn' : 'unActiveBtn'}
         onClick={goToMain}
-        disabled={id.includes('@') && password.length > 4 ? false : true}
+        disabled={buttonDisabled}
       >
         로그인
       </button>

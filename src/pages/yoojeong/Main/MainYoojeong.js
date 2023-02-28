@@ -3,7 +3,7 @@ import CommentTotalWrap from './CommentTotalWrap';
 import './MainYoojeong.scss';
 
 const MainYoojeong = () => {
-  // input에 작성된 텍스트가 화면상 input창에 보일 수 있도록
+  // input에 작성된 값을 받겠다(배열에 담기 위해)
   const [inputValue, setInputValue] = useState('');
 
   // 작성된 댓글들을 배열에 담아 관리 (array.map 사용을 위해)
