@@ -23,11 +23,7 @@ const CommentTaehoon = props => {
 
   return (
     <>
-      <div
-        className="commentList"
-        key={commentArray.toString()}
-        value={comment}
-      >
+      <div className="commentList" value={comment}>
         {addNewComment}
       </div>
 

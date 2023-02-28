@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Comment from '../Comment/CommentTaehoon';
+import CommentTaehoon from '../Comment/CommentTaehoon';
 import instargramIcon from '../../../assets/taehoon/instagram.png';
 import mari from '../../../assets/taehoon/IMG_1211.JPG';
 import feedImg from '../../../assets/taehoon/IMG_1278.jpeg';
@@ -60,7 +60,8 @@ const MainTaehoon = () => {
                     <section>
                       <span className="whoIsLike">여러명이 좋아합니다.</span>
 
-                      <Comment
+                      <CommentTaehoon
+                        key={commentArray.toString()}
                         comment={comment}
                         setComment={setComment}
                         commentArray={commentArray}
