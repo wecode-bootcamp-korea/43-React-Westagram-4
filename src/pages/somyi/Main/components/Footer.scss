@@ -1,0 +1,28 @@
+@import '../../../../styles/variables.scss';
+
+footer {
+  margin-top: 2rem;
+  font-size: 1.3rem;
+  color: $gray;
+
+  ul {
+    li {
+      display: inline-block;
+
+      &::after {
+        content: '·';
+        margin-left: 0.2rem;
+        margin-right: 0.2rem;
+      }
+
+      a {
+        color: $gray;
+      }
+    }
+  }
+
+  small {
+    display: block;
+    margin-top: 1.5rem;
+  }
+}

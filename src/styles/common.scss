@@ -1,3 +1,52 @@
+@import './variables.scss';
+
 * {
   box-sizing: border-box;
+}
+
+html {
+  font-size: 10px;
+
+  body {
+    margin: 0;
+    font-size: 1.5rem;
+    line-height: 1.5;
+    background-color: $background-color;
+  }
+}
+
+i {
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* 여기서부터 form style form, */
+input {
+  border: none;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+/* 여기까지 form style 여기서부터 h1 ~ h6 */
+h1 {
+  font-family: 'Lobster', cursive;
+}
+
+h2,
+h3 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 1.5;
+}
+/* 여기까지 h1 ~ h6  */
+
+/* 여기서부터 공통 class  */
+.blind {
+  display: none;
 }

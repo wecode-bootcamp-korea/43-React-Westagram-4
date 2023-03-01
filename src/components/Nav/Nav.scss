@@ -1,0 +1,19 @@
+.nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+  font-size: 5rem;
+  font-weight: 700;
+  ul {
+    li {
+      margin-bottom: 4rem;
+      cursor: pointer;
+
+      &:nth-child(4) {
+        margin-bottom: 0;
+      }
+    }
+  }
+}

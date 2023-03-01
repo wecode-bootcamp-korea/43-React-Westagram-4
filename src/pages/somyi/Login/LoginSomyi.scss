@@ -1,0 +1,66 @@
+@import '../../../styles/mixin.scss';
+@import '../../../styles/variables.scss';
+
+.loginSomyi {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: min-content;
+  transform: translate(-50%, -50%);
+  border: 1px solid $border-color;
+  background-color: #ffffff;
+
+  h1 {
+    margin: 6rem 6rem;
+    font-size: 5rem;
+  }
+
+  form {
+    input {
+      display: block;
+      width: 80%;
+      height: 4rem;
+      margin: 0 auto 1rem;
+      padding-left: 0.8rem;
+      border: 1px solid $border-color;
+      border-radius: 3px;
+      background-color: $background-color;
+      color: $border-color;
+      line-height: 4rem;
+    }
+
+    button {
+      display: block;
+      width: 80%;
+      margin: 0 auto 1rem;
+      border: none;
+      border-radius: 12px;
+      background-color: #67b6fa;
+      color: #fff;
+      font-size: 1.6rem;
+      line-height: 4rem;
+
+      &.albled {
+        background-color: #67b6fa;
+        cursor: pointer;
+      }
+
+      &.disabled {
+        background-color: #39f;
+      }
+
+      a {
+        color: #fff;
+      }
+    }
+  }
+
+  .pwSearch {
+    margin: 7rem 0 3rem;
+    text-align: center;
+
+    a {
+      color: #3b628a;
+    }
+  }
+}

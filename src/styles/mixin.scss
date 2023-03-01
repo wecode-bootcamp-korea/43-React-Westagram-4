@@ -1,0 +1,17 @@
+@mixin displayFlex($justify, $align) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin profileFlex {
+  display: flex;
+  align-items: center;
+}
+
+@mixin userPofileImg {
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 50%;
+}
