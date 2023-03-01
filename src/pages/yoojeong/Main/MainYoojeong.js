@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { ASIDE_BOTTOM } from './AsideBottom';
 import CommentTotalWrap from './CommentTotalWrap';
 import './MainYoojeong.scss';
 
@@ -289,52 +290,13 @@ const MainYoojeong = () => {
             </ul>
           </div>
           <p className="etcWrap">
-            <a className="etc" href="#">
-              instagram 정보
-            </a>
-            ・
-            <a className="etc" href="#">
-              지원
-            </a>
-            ・
-            <a className="etc" href="#">
-              홍보 센터
-            </a>
-            ・
-            <a className="etc" href="#">
-              API
-            </a>
-            <a className="etc" href="#">
-              채용
-            </a>
-            ・
-            <a className="etc" href="#">
-              정보
-            </a>
-            ・
-            <a className="etc" href="#">
-              개인정보처리방침
-            </a>
-            ・
-            <a className="etc" href="#">
-              약관
-            </a>
-            ・
-            <a className="etc" href="#">
-              디렉터리
-            </a>
-            ・
-            <a className="etc" href="#">
-              프로필
-            </a>
-            ・
-            <a className="etc" href="#">
-              해시태그
-            </a>
-            ・
-            <a className="etc" href="#">
-              언어
-            </a>
+            {ASIDE_BOTTOM.map(data => {
+              return (
+                <a key={data.id} className="etc" href="#">
+                  {data.title}
+                </a>
+              );
+            })}
           </p>
           <p className="etc">© 2023 WESTAGRAM</p>
         </div>

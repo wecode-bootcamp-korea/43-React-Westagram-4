@@ -27,9 +27,7 @@ const LoginYoojeong = () => {
       : setisActive(false);
   };
 
-  const buttonDisabled = () => {
-    return id.includes('@') && password.length > 4 ? false : true;
-  };
+  const buttonDisabled = id.includes('@') && password.length > 4 ? false : true;
 
   return (
     <main className="loginYoojeong">
