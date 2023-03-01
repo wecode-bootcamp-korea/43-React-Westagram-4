@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "profileImg": "/images/yoojeong/user.png",
+    "userId": "Kim",
+    "articleImg": "/images/yoojeong/chad-montano-MqT0asuoIcU-unsplash.jpg",
+    "postText": "Looks",
+    "postTime": "42분 전"
+  },
+  {
+    "id": 2,
+    "profileImg": "/images/yoojeong/user.png",
+    "userId": "Lee",
+    "articleImg": "/images/yoojeong/chad-montano-MqT0asuoIcU-unsplash.jpg",
+    "postText": "Good",
+    "postTime": "30분 전"
+  },
+  {
+    "id": 3,
+    "profileImg": "/images/yoojeong/user.png",
+    "userId": "Park",
+    "articleImg": "/images/yoojeong/chad-montano-MqT0asuoIcU-unsplash.jpg",
+    "postText": "To",
+    "postTime": "1시간 전"
+  },
+  {
+    "id": 4,
+    "profileImg": "/images/yoojeong/user.png",
+    "userId": "Kwon",
+    "articleImg": "/images/yoojeong/chad-montano-MqT0asuoIcU-unsplash.jpg",
+    "postText": "Me",
+    "postTime": "23시간 전"
+  },
+  {
+    "id": 5,
+    "profileImg": "/images/yoojeong/user.png",
+    "userId": "Jung",
+    "articleImg": "/images/yoojeong/chad-montano-MqT0asuoIcU-unsplash.jpg",
+    "postText": "👍🏼",
+    "postTime": "17분 전"
+  }
+]
