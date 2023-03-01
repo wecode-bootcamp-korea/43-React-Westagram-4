@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import CommentTaehoon from '../Comment/CommentTaehoon';
 import instargramIcon from '../../../assets/taehoon/instagram.png';
+import { ASIDE } from '../Aside/data';
 import mari from '../../../assets/taehoon/IMG_1211.JPG';
 import feedImg from '../../../assets/taehoon/IMG_1278.jpeg';
 import './MainTaehoon.scss';
@@ -92,6 +93,15 @@ const MainTaehoon = () => {
                   <h6 className="storyOwner">TaeHoon</h6>
                 </div>
               </div>
+              <ul className="etcList">
+                {ASIDE.map(list => {
+                  return (
+                    <span key={list.id} className="etc">
+                      {list.title}
+                    </span>
+                  );
+                })}
+              </ul>
             </section>
           </div>
         </main>

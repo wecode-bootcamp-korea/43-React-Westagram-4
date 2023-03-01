@@ -61,11 +61,11 @@
 
         display: flex;
         flex-flow: row nowrap;
-        border: 1px solid #e6e6e6;
 
         .mainLeft {
           display: flex;
           width: 100%;
+          border: 1px solid #e6e6e6;
 
           .feed {
             width: 100%;
@@ -132,7 +132,6 @@
 
         .mainRight {
           width: 50%;
-          border-left: 1px solid #e6e6e6;
 
           .writer {
             width: 100%;
@@ -140,11 +139,12 @@
             justify-content: center;
             align-items: center;
             margin-top: 5%;
+            margin-left: 5%;
 
             .idOwner {
               border-radius: 50%;
-              width: 25px;
-              height: 25px;
+              width: 35px;
+              height: 35px;
             }
 
             .idOwnerName {
@@ -154,8 +154,8 @@
 
           .story {
             border: 1px solid #e6e6e6;
-            width: 80%;
-            margin-left: 9%;
+            width: 100%;
+            margin-left: 20%;
             margin-top: 10%;
 
             .storyTitle {
@@ -179,6 +179,14 @@
               .storyOwner {
                 margin-left: 10px;
               }
+            }
+          }
+          .etcList {
+            margin-left: 20%;
+            .etc {
+              font-size: 10px;
+              color: #a2a2a2;
+              margin: 3px;
             }
           }
         }
