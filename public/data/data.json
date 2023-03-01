@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "userId": "wecode_bootcamp",
+    "userImg": "images/somyi/userimg.jpeg",
+    "feedImg": "images/somyi/userimg.jpeg",
+    "feedText": "Welcome wecode!"
+  },
+  {
+    "id": 2,
+    "userId": "happyDays_2",
+    "userImg": "https://images.pexels.com/photos/7532116/pexels-photo-7532116.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    "feedImg": "https://images.pexels.com/photos/7532116/pexels-photo-7532116.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    "feedText": "행복한 하루 보내세요 :)"
+  },
+  {
+    "id": 3,
+    "userId": "Weekend_Plz_",
+    "userImg": "https://images.pexels.com/photos/10937018/pexels-photo-10937018.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load",
+    "feedImg": "https://images.pexels.com/photos/10937018/pexels-photo-10937018.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load",
+    "feedText": "여유로운 주말 보내기!"
+  }
+]

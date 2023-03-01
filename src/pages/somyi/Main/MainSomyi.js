@@ -1,31 +1,26 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import Comments from './components/Comments';
+import Feeds from './components/Feeds';
+import Footer from './components/Footer';
 import './MainSomyi.scss';
 
 const MainSomyi = () => {
   const navigate = useNavigate();
 
-  const [comment, setComment] = useState('');
-  const commentValue = e => {
-    setComment(e.target.value);
-  };
+  const [dataList, setDataList] = useState([]);
 
-  const [commentArray, setCommentArray] = useState([]);
-
-  const addComment = e => {
-    e.preventDefault();
-
-    if (comment === '') {
-      return;
-    }
-
-    setCommentArray(commentValueList => [...commentValueList, comment]);
-    setComment('');
-  };
+  useEffect(() => {
+    fetch('./data/data.json', {
+      method: 'GET',
+    })
+      .then(res => res.json())
+      .then(data => {
+        setDataList(data);
+      });
+  }, []);
 
   return (
-    <div className="main">
+    <div className="mainSomyi">
       <nav className="navContainer">
         <div className="logoWrap">
           <img
@@ -58,49 +53,12 @@ const MainSomyi = () => {
       </nav>
       <main>
         <div className="contentsContainer">
-          <section className="feeds">
-            <header>
-              <div />
-              <p>wecode_bootcamp</p>
-            </header>
-            <article>
-              <div className="postImg">
-                <img src="images/somyi/userimg.jpeg" alt="사용자 게시 이미지" />
-              </div>
-              <div className="feedBottom">
-                <i className="fa-sharp fa-regular fa-heart" />
-                <i className="fa-sharp fa-regular fa-comment" />
-                <i className="fa-sharp fa-regular fa-share-from-square" />
-                <i className="fa-sharp fa-regular fa-bookmark" />
-                <div>
-                  <div />
-                  <span>seungyoun_iain</span>님 &nbsp;
-                  <span>외 4명</span>이 좋아합니다
-                </div>
-                <div>
-                  <span>wecode_bootcamp</span> &nbsp;어쩌구
-                  저쩌구저쩌주저ㅓ어어ㅓㄴ
-                </div>
-                <ul>
-                  {commentArray.map((value, index) => (
-                    <Comments value={value} key={index} />
-                  ))}
-                </ul>
-              </div>
-              <form className="commentWrap" onSubmit={addComment}>
-                <input
-                  type="text"
-                  placeholder="댓글달기"
-                  value={comment}
-                  onChange={commentValue}
-                />
-                <button type="button" onClick={addComment}>
-                  게시
-                </button>
-              </form>
-            </article>
-          </section>
-          <div className="main_right">
+          <div className="feedsWrap">
+            {dataList.map(info => {
+              return <Feeds key={info.id} info={info} />;
+            })}
+          </div>
+          <div className="subContentsWrap">
             <header>
               <div className="ProfileImg" />
               <div>
@@ -162,23 +120,7 @@ const MainSomyi = () => {
                 <button type="button">팔로우</button>
               </article>
             </section>
-            <footer className="gray">
-              <ul>
-                <li>Instagram 정보</li>
-                <li>지원</li>
-                <li>지원</li>
-                <li>홍보센터</li>
-                <li>API</li>
-                <li>채용정보</li>
-                <li>개인정보처리방침</li>
-                <li>약관</li>
-                <li>디렉터리</li>
-                <li>프로필</li>
-                <li>해시태그</li>
-                <li>언어</li>
-              </ul>
-              <small>&copy; 2019 INSTAGRAM</small>
-            </footer>
+            <Footer />
           </div>
         </div>
       </main>
