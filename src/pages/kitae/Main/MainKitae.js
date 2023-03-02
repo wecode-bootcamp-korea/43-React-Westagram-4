@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
+import INFO_LIST from './Info_kitae';
 import './MainKitae.scss';
+
 // import Comment from './Comment';
 
 const MainKitae = () => {
@@ -205,24 +207,26 @@ const MainKitae = () => {
             {/* <!-- 댓글쓰기 --> */}
             <div className="sendReplWrap">
               <div className="formDiv">
-                <div className="inputWrap">
-                  <input
-                    className="replInput"
-                    type="text"
-                    placeholder="댓글 달기..."
-                    value={comment}
-                    onChange={handleComment}
-                  />
-                </div>
-                <div className="submitWrap">
-                  <button
-                    className="replBtnOpacity05"
-                    type="button"
-                    onClick={handleCommentList}
-                  >
-                    게시
-                  </button>
-                </div>
+                <form onSubmit={handleCommentList}>
+                  <div className="inputWrap">
+                    <input
+                      className="replInput"
+                      type="text"
+                      placeholder="댓글 달기..."
+                      value={comment}
+                      onChange={handleComment}
+                    />
+                  </div>
+                  <div className="submitWrap">
+                    <button
+                      className="replBtnOpacity05"
+                      type="button"
+                      onClick={handleCommentList}
+                    >
+                      게시
+                    </button>
+                  </div>
+                </form>
               </div>
             </div>
           </article>
@@ -295,39 +299,11 @@ const MainKitae = () => {
           <div className="sideFoot">
             <nav>
               <ul>
-                <li>
-                  <a href="#">Instagram 정보</a>
-                </li>
-                <li>
-                  <a href="#">도움말</a>
-                </li>
-                <li>
-                  <a href="#">홍보 센터</a>
-                </li>
-                <li>
-                  <a href="#">API</a>
-                </li>
-                <li>
-                  <a href="#">채용 정보</a>
-                </li>
-                <li>
-                  <a href="#">개인정보처리방침</a>
-                </li>
-                <li>
-                  <a href="#">약관</a>
-                </li>
-                <li>
-                  <a href="#">디렉터리</a>
-                </li>
-                <li>
-                  <a href="#">프로필</a>
-                </li>
-                <li>
-                  <a href="#">해시태그</a>
-                </li>
-                <li>
-                  <a href="#">언어</a>
-                </li>
+                {INFO_LIST.map(info => (
+                  <li key={info.id}>
+                    <a href={info.text}>{info.text}</a>
+                  </li>
+                ))}
               </ul>
             </nav>
             <span>© 2023 INSTAGRAM</span>

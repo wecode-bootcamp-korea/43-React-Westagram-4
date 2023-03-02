@@ -9,7 +9,19 @@ const LoginKitae = () => {
   const [isActive, setIsActive] = useState(true);
 
   const goToMain = () => {
-    navigate('/main-kitae');
+    // navigate('/main-kitae');
+    fetch('http://10.58.52.101:3000/auth/signup', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json;charset=utf-8',
+      },
+      body: JSON.stringify({
+        email: id,
+        password: pw,
+      }),
+    })
+      .then(response => response.json())
+      .then(data => console.log(data));
   };
 
   const isPassedLogin = isActive => {
@@ -28,6 +40,21 @@ const LoginKitae = () => {
     setPw(event.target.value);
     console.log('pw', pw);
   }
+
+  // const logIn = event => {
+  //   fetch('http://10.58.113.116:8000/signin', {
+  //     method: 'POST',
+  //     headers: {
+  //       'Content-Type': 'application/json;charset=utf-8',
+  //     },
+  //     body: JSON.stringify({
+  //       email: id,
+  //       password: pw,
+  //     }),
+  //   })
+  //     .then(response => response.json())
+  //     .then(data => console.log(data));
+  // };
 
   return (
     <article>
