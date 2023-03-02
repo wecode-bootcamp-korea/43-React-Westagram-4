@@ -13,7 +13,6 @@
 
     .navigation {
       display: flex;
-
       align-items: center;
       flex-direction: row;
       height: 50px;
@@ -63,12 +62,12 @@
         flex-flow: row nowrap;
 
         .mainLeft {
-          display: flex;
           width: 100%;
-          border: 1px solid #e6e6e6;
 
           .feed {
             width: 100%;
+            margin-bottom: 10px;
+            border: 1px solid #e6e6e6;
 
             .writer {
               width: 100%;
@@ -93,6 +92,11 @@
               width: 100%;
             }
 
+            .iconList {
+              display: flex;
+              justify-content: space-between;
+            }
+
             #awsomeIcon {
               margin: 2px;
             }
@@ -107,6 +111,7 @@
               font-size: 13px;
               overflow: auto;
               max-height: 100px;
+              margin-top: 10px;
             }
 
             .addComment {

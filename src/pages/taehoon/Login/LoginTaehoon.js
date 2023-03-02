@@ -22,9 +22,27 @@ const LoginTaehoon = () => {
   };
 
   const onClick = () => {
-    id.includes('@') && pw.length >= 5
-      ? goToMain()
-      : alert('아이디를 확인해주세요.');
+    if (id.includes('@') && pw.length >= 5) {
+      fetch('http://10.58.52.73:8000/auth/signin', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json;charset=utf-8',
+        },
+        body: JSON.stringify({
+          email: `${id}`,
+          password: `${pw}`,
+        }),
+      })
+        .then(response => response.json())
+        .then(data => {
+          if (data.accessToken) {
+            localStorage.setItem('token', data.accessToken);
+          } else {
+            alert('다시하셈');
+          }
+        });
+    }
+    return null;
   };
 
   const saveUserId = e => {
