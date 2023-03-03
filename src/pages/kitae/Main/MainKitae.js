@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import INFO_LIST from './Info_kitae';
+import CommentKitae from './CommentKitae';
 import './MainKitae.scss';
 
 // import Comment from './Comment';
@@ -128,11 +129,7 @@ const MainKitae = () => {
                   <a href="#" className="userId">
                     USER_ID
                   </a>
-                  <a
-                    href="#
-            "
-                    className="mention"
-                  >
+                  <a href="#" className="mention">
                     @user.id
                   </a>
                   댓글이다.
@@ -154,11 +151,7 @@ const MainKitae = () => {
                   <a href="#" className="userId">
                     USER_ID
                   </a>
-                  <a
-                    href="#
-          "
-                    className="mention"
-                  >
+                  <a href="#  " className="mention">
                     @user.id
                   </a>
                   댓글이다.
@@ -177,29 +170,7 @@ const MainKitae = () => {
                 </span>
                 {/* <!-- 추가댓글 끝 --> */}
                 {commentArray.map(list => {
-                  return (
-                    <span key={list} className="othersRepl">
-                      <a href="#" className="userId">
-                        USER_ID
-                      </a>
-                      <a href="#" className="mention">
-                        @user.id
-                      </a>
-                      {list}
-                      <button type="button" className="replHoverThreeDotHidden">
-                        <img
-                          src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/more.png"
-                          alt=""
-                        ></img>
-                      </button>
-                      <button type="button" className="heartBtn">
-                        <img
-                          src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/heart.png"
-                          alt=""
-                        />
-                      </button>
-                    </span>
-                  );
+                  return <CommentKitae list={list} />;
                 })}
               </div>
               <span className="feedTime">2시간 전</span>
