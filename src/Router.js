@@ -9,6 +9,7 @@ import MainSomyi from './pages/somyi/Main/MainSomyi';
 
 import LoginKitae from './pages/kitae/Login/LoginKitae';
 import MainKitae from './pages/kitae/Main/MainKitae';
+import Comment from './pages/kitae/Comment/Comment';
 
 import LoginYoojeong from './pages/yoojeong/Login/LoginYoojeong';
 import MainYoojeong from './pages/yoojeong/Main/MainYoojeong';
